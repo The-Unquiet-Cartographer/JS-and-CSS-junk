@@ -4,10 +4,10 @@
 */
     function NewElement(elmtType, Arr_classes = [], Func_appendStyles = (_newElmt)=>{return;}) {        //<== With Func_appendStyles you can add a function to the constructor like (_newElmt)=>{DOSTUFF}). Useful for including extra paramaters.
         const newElmt = document.createElement(elmtType);
-        for (cl in Arr_classes) {
+        Arr_classes.forEach(cl => {
             if (cl[0] === '#') newElmt.id = cl.substring(1);
-            else newElmt.classList.add(Arr_classes[cl]);
-        }
+            else newElmt.classList.add(cl);
+        });
         Func_appendStyles(newElmt);
         return newElmt;
     }
