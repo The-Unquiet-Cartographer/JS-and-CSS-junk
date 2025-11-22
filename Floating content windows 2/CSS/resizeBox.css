@@ -1,0 +1,20 @@
+/*
+*   Provides everything you need to make a box re-sizable.
+*   The only thing you need to do is manually initialize of the parent,
+    either using a special CSS class/id or Javascript.
+*   You can use position:relative + display:inline-block as well... 
+*/
+.resizable {
+    resize: both;
+    overflow: scroll;
+    min-width: 160px;
+    min-height: 128px;
+    /*position:absolute;*/
+    position:relative;
+    display:inline-block;
+}
+
+#resizable-parent {
+    width:640px;
+    height:480px;
+}

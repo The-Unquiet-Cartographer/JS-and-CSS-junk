@@ -1,0 +1,16 @@
+body {background: black; margin:0;}
+.hidden {display:none;}
+.shroud {filter:grayscale();}
+.map {position:absolute; display:inline-block;}
+.tile {position:absolute; display:inline; z-index: -1000;}
+.overlay {position:absolute; display:inline; z-index: -100;}
+
+#top {display:inline-block; width:100%; height:auto; background:grey;}
+#top >* {height:100px; float:left;}
+.btn {width:200px; box-sizing:border-box; border:solid black 1px; /*margin:10px 10px 10px 0; */padding:10px;}
+.btn:hover {cursor:pointer;}
+.btn-imgCtnr {position:relative; height:40px; object-fit:cover;}
+.btn-imgCtnr >img {position:absolute; top:50%; left:50%; transform:translate(-50%,-50%); height:100%;} 
+.btn-text {text-align:center; line-height:20px;}
+
+

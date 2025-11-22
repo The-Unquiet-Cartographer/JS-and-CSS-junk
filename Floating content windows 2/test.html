@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel=stylesheet href="CSS/styles.css">
+    <title>Document</title>
+    <style>
+        body {background:darkgrey;}
+        .wFloat-border {
+            background:lightblue;
+        }
+        .wFloat-anchor:hover {
+            cursor:pointer;
+        }
+	/*
+		NEW
+	*/
+		.floatingWindow {
+			overflow: scroll;
+		}
+		.wFloat-border {
+			background: transparent;
+		}
+		.wfloat-anchor {
+			position: sticky;		/*Trying to get the anchor to stick in place when I scroll the box but no luck.*/
+		}
+    </style>
+</head>
+<body>
+    <image id=subrosia class=hidden src="Images/subrosia.png"></image>
+
+    <div class="floatingWindow">
+        <div id="map-subrosia" class="map">
+            <!--Subrosia map tiles go in here (generated via JavaScript)-->
+        </div>
+    </div>
+
+    <script src="JS/_classes.js"></script>
+    <script src="JS/_utilities.js"></script>
+    <script src="JS/_vars.js"></script>
+    <script src="JS/floatingWindow.js"></script>
+    <script>
+        const Subrosia = new Map(document.getElementById("map-subrosia"), 11,8);
+        const MapSource = {subrosia: document.getElementById("subrosia")};
+        window.onload = ()=>{
+            const arr = new Array(11 * 8);
+            for (let i = 0; i < arr.length; i++) arr[i] = i;
+            Subrosia.SetAreaState(arr, MapSource.subrosia);
+        }
+    </script>
+</body>
+</html>
